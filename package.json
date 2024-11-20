@@ -6,10 +6,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Vite","Vue3","React","CLI","Element-plus","Antdesign"],
+  "author": "TianBenchu",
   "license": "ISC",
-  "description": "",
+  "description": "benchu-cli 脚手架工具，快速生成vue或react项目模板",
+  "bin": {
+    "benchu": "bin/index.js"
+  },
+  "files": ["bin","dist","README.md"],
   "devDependencies": {
     "@inquirer/prompts": "^3.2.0",
     "@rollup/plugin-commonjs": "^25.0.8",
