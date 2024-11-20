@@ -23,7 +23,9 @@ export default defineConfig([
       externals({
         devDeps: false, // 可以识别我们 package.json 中的依赖当作外部依赖处理 不会直接将其中引用的方法打包出来
       }),
-      typescript(),
+      typescript({
+        tsconfig: "./tsconfig.json", // 确保 tsconfig.json 设置正确
+      }),
       json(),
       commonjs(),
       terser(),

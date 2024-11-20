@@ -3,7 +3,7 @@ import { clone } from "../utils/clone"
 import fs from "fs-extra"
 import { templateList, templates } from "../utils/template"
 import { getProjectPath, isOverwrite } from "../utils/overwrite"
-import { checkVersion } from "../utils/check-version"
+// import { checkVersion } from "../utils/check-version"
 
 export async function create(projectName?: string) {
   // 如果 create 时没有输入项目名称，则提示用户输入
@@ -24,7 +24,7 @@ export async function create(projectName?: string) {
   }
 
   // 检查版本更新
-  await checkVersion()
+  // await checkVersion()
 
   // 用户选择的模版信息
   const templateName = await select({

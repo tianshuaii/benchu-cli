@@ -26,14 +26,14 @@ export const checkVersion = async () => {
   const needUpdate = gt(lastestVersion, version)
   if (needUpdate) {
     console.warn(
-      `${chalk.greenBright(name)} 版本需要更新，当前版本：${chalk.blueBright(
+      `${chalk.green(name)} 版本需要更新，当前版本：${chalk.blue(
         version
       )}, 最新版本：${chalk.blueBright(lastestVersion)}`
     )
     console.log(
       `可使用${chalk.yellow(
         "npm install benchu-cli@latest -g"
-      )} 或 ${chalk.yellow("benchu update")}更新`
+      )} 或 ${chalk.yellow("benchu update")} 更新`
     )
   }
 }
