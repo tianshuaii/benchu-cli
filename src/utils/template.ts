@@ -10,7 +10,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
     "Vite-Vue3-TypeScript-template",
     {
       name: "Vite-Vue3-TypeScript-template",
-      downloadUrl: "git@gitee.com:tian__shuai/template-vite5--vue3.git",
+      downloadUrl: "https://gitee.com/tian__shuai/template-vite5--vue3.git",
       description: "vite + vue3 + ts初始模版",
       branch: "master",
     },
@@ -19,7 +19,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
     "Vite-Vue3-TypeScript-ElementUI-template",
     {
       name: "Vite-Vue3-TypeScript-ElementUI-template",
-      downloadUrl: "git@gitee.com:tian__shuai/template-vite5--vue3.git",
+      downloadUrl: "https://gitee.com/tian__shuai/template-vite5--vue3.git",
       description: "vite + vue3 + ts + elementplus 初始模版",
       branch: "element",
     },
@@ -28,7 +28,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
     "Vite-Vue3-TypeScript-ElementUI-layout-template",
     {
       name: "Vite-Vue3-TypeScript-ElementUI-layout-template",
-      downloadUrl: "git@gitee.com:tian__shuai/template-vite5--vue3.git",
+      downloadUrl: "https://gitee.com/tian__shuai/template-vite5--vue3.git",
       description: "vite + vue3 + ts + elementplus + layout 初始模版",
       branch: "element_layout",
     },

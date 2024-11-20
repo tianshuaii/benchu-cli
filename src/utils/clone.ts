@@ -6,12 +6,12 @@ import chalk from "chalk"
 const logger = createLogger({
   spinner: {
     interval: 100, // 100毫秒刷新一次
-    frames: ["⠋", "⠙", "⠹", "⠸"].map((item) => chalk.blue(item)), // 进度条的样式，
+    frames: ["⠋", "⠙", "⠹", "⠸"].map((item) => chalk.blue(item)), // 进度条的样式
   },
 })
 
 const getOptions: Partial<SimpleGitOptions> = {
-  baseDir: `${process.cwd()}/project`, // 指定 simple-git 操作的目录，默认为 process.cwd() 表示当前目录
+  baseDir: process.cwd(), // 指定 simple-git 操作的目录，默认为 process.cwd() 表示当前目录
   binary: "git", // 指定 git 的二进制文件位置
   maxConcurrentProcesses: 6, // 最大并发进程数
   trimmed: false, // git 输出的结果是否自动去除前后多余的空白字符
