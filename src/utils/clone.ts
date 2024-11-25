@@ -2,7 +2,9 @@ import { simpleGit, SimpleGit, SimpleGitOptions } from "simple-git"
 import createLogger from "progress-estimator"
 import chalk from "chalk"
 import log from "./log"
-const figlet = require("figlet")
+import { successTip } from "./success-tip"
+import fs from "fs-extra"
+import path from "path"
 
 // 初始化进度条
 const logger = createLogger({
@@ -19,11 +21,6 @@ const getOptions: Partial<SimpleGitOptions> = {
   trimmed: false, // git 输出的结果是否自动去除前后多余的空白字符
 }
 
-const goodPrinter = async (message: string) => {
-  const data = await figlet(message)
-  console.log(chalk.rgb(40, 156, 193).visible(data))
-}
-
 export const clone = async (
   url: string,
   projectName: string,
@@ -35,20 +32,13 @@ export const clone = async (
       estimate: 5000, // 预计下载时间
     })
 
-    console.log()
-    console.log(chalk.blackBright("======================================="))
-    console.log(chalk.blackBright("========= 欢迎使用 benchu-cli ========="))
-    console.log(chalk.blackBright("======================================="))
-    console.log()
+    // 删除 .git 目录，取消 Git 仓库关联
+    const gitDir = path.join(process.cwd(), projectName, ".git")
+    if (fs.existsSync(gitDir)) {
+      fs.rmSync(gitDir, { recursive: true, force: true })
+    }
 
-    log.success(`项目创建成功 ${chalk.blueBright(projectName)}`)
-    console.log()
-    log.success("执行以下命令启动项目")
-    log.info(`cd ${chalk.blueBright(projectName)}`)
-    log.info(`${chalk.yellow("pnpm")} install`)
-    log.info(`${chalk.yellow("pnpm")} run dev`)
-
-    goodPrinter("benchu-cli")
+    successTip(projectName)
   } catch (e) {
     log.error(chalk.red("代码下载失败！"))
   }
